@@ -1,0 +1,48 @@
+basePath: /
+host: localhost:8080
+info:
+  contact: {}
+  description: REST API for upload and download Files.
+  title: File service
+  version: "1.0"
+paths:
+  /file:
+    get:
+      description: Download file by name if exist
+      parameters:
+      - description: file_name
+        in: query
+        name: file_name
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+      summary: Download file
+      tags:
+      - file
+    post:
+      consumes:
+      - multipart/form-data
+      description: Upload file by name
+      parameters:
+      - description: file
+        in: formData
+        name: file
+        required: true
+        type: file
+      responses:
+        "201":
+          description: Created
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+      summary: Upload file
+      tags:
+      - file
+swagger: "2.0"
