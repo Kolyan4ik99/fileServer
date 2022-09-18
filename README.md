@@ -24,19 +24,19 @@
 1) Загрузить файл:
 
 
-    curl -X 'POST' \
-    'http://localhost:8080/file' \
-    -H 'accept: application/json' \
-    -H 'Content-Type: multipart/form-data' \
-    -F 'file=@pic-components.png;type=image/png'
+        curl -X 'POST' \
+        'http://localhost:8080/file' \
+        -H 'accept: application/json' \
+        -H 'Content-Type: multipart/form-data' \
+        -F 'file=@pic-components.png;type=image/png'
 
 
 2) Скачать файл:
 
 
-    curl -X 'GET' \
-    'http://localhost:8080/file?file_name=components.png' \
-    -H 'accept: application/json'
+        curl -X 'GET' \
+        'http://localhost:8080/file?file_name=components.png' \
+        -H 'accept: application/json'
 
 P.S.
 Все фрагменты файлов удаляются вручную и хранятся в папке "files_folder".
